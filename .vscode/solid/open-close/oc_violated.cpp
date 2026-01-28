@@ -5,9 +5,7 @@ class Product{
     public:
     string name;
     double price;
-    Product(string name,double price){
-        this->name=name;
-        this->price=price;
+    Product(string name,double price):name(name),price(price){
     }
 };
 class ShoppingCart{
