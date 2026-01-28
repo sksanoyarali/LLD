@@ -57,12 +57,12 @@ int main(){\
     Shape * rect=new Rectangle(2,4);
     Shape * cube=new Cube(3);
 
-cout << "Square Area: " << square->area() << endl;
+    cout << "Square Area: " << square->area() << endl;
     cout << "Rectangle Area: " << rect->area() << endl;
     cout << "Cube Area: " << cube->area() << endl;
     cout << "Cube Volume: " << cube->volume() << endl;
     try{
-        cout<<"Square volume"<<rect->volume()<<endl;
+        cout<<"Rectangle volume"<<rect->volume()<<endl;
         cout<<"Square volume"<<square->volume()<<endl;
     }
     catch(logic_error& e){
@@ -70,3 +70,10 @@ cout << "Square Area: " << square->area() << endl;
     }
     
 }
+// another example would be worker to human worker 
+// and robot worker but robot worker
+// but robot worker dont need sleep and eat
+// but they forced to implement it violationg isp
+// so what can we do we make interface of workable,seelable,eatable
+// class HumanWorker : public Workable, public Eatable, public Sleepable 
+// class RobotWorker : public Workable
