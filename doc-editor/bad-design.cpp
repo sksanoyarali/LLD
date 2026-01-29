@@ -14,11 +14,13 @@ public:
     // Adds text as a plain string
     void addText(string text) {
         documentElements.push_back(text);
+        renderedDocument.clear();
     }
 
     // Adds an image represented by its file path
     void addImage(string imagePath) {
         documentElements.push_back(imagePath);
+        renderedDocument.clear();
     }
 
     // Renders the document by checking the type of each element at runtime
@@ -54,6 +56,7 @@ int main() {
     DocumentEditor editor;
     editor.addText("Hello, world!");
     editor.addImage("picture.jpg");
+    cout << editor.renderDocument() << endl;
     editor.addText("This is a document editor.");
 
     cout << editor.renderDocument() << endl;

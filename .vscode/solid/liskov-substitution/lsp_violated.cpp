@@ -15,7 +15,7 @@ class SavingsAccount:public Account{
         balance=0;
     }
     void deposit(double amount) override{
-         balance += amount;
+        balance += amount;
         cout << "Deposited: " << amount << " in Savings Account. New Balance: " << balance << endl;
     }
     void withdraw(double amount) override{
