@@ -9,6 +9,7 @@ using namespace std;
 class DocumentElement {
 public:
     virtual string render() = 0;
+    virtual ~DocumentElement() {} 
 };
 
 // Concrete implementation for text elements
@@ -75,6 +76,9 @@ public:
         }
         return result;
     }
+    ~Document() {
+    for (auto e : documentElements) delete e;
+}
 };
 
 // Persistence abstraction
@@ -121,20 +125,24 @@ public:
 
     void addText(string text) {
         document->addElement(new TextElement(text));
+         renderedDocument.clear(); 
     }
 
     void addImage(string imagePath) {
         document->addElement(new ImageElement(imagePath));
+        renderedDocument.clear(); 
     }
 
     // Adds a new line to the document.
     void addNewLine() {
         document->addElement(new NewLineElement());
+         renderedDocument.clear(); 
     }
 
     // Adds a tab space to the document.
     void addTabSpace() {
         document->addElement(new TabSpaceElement());
+         renderedDocument.clear(); 
     }
 
     string renderDocument() {
