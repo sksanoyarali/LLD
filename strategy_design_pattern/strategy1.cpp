@@ -1,12 +1,12 @@
 #include<iostream>
 using namespace std;
-//walkable robot
+//walkable robot strtegy interface
 class WalkableRobot{
     public:
     virtual void walk()=0;
     virtual ~WalkableRobot(){}
 };
-
+// concrete strategy for walkable robot
 class NormalWalk:public WalkableRobot{
     public:
     void walk() override{
@@ -26,6 +26,7 @@ class FlyableRobot{
     virtual void fly()=0;
     virtual ~FlyableRobot(){}
 };
+ // concrete strategy for Flyable robot
 class NormalFly:public FlyableRobot{
     public:
     void fly() override{
@@ -38,12 +39,14 @@ class NoFly:public FlyableRobot{
         cout<<"cannot fly"<<endl;
     }
 };
-// talkable
+// talkable interface 
 class TalkableRobot{
     public:
     virtual void talk()=0;
     virtual ~TalkableRobot(){}
 };
+
+// concrete strategy for talkable
 class NormalTalk:public TalkableRobot{
     public:
     void talk() override{
